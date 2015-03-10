@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block student %}
+    {% if student == "no" %}
+        <div class="ui red message">Student doesn't want to share his/her details.</div>
+    {% else %}
+
+        <div class="ui twelve wide centered padded column">
+        <div class="ui centered">
+            <a class="ui green large centered button" href="https://www.google.com/search?q={{ student.name|lower }}">Google
+                    {%  if student.gender == 'Male' %}
+                        him
+                    {% else %}
+                        her
+                    {% endif %}
+                </a>
+        </div>
+
+            <table class="ui green celled striped table">
+                    <tr>
+                        <td>
+                            Name:
+                        </td>
+                        <td>
+                            {{ student.name|lower|capfirst }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Father name:</td>
+                        <td>
+                            {{ student.fathername }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>DOB:</td>
+                        <td>{{ student.dob }}</td>
+                    </tr>
+                    <tr><td>Mobile number:</td><td>{{ student.mobile }}</td></tr>
+                    <tr><td>Email:</td><td>{{ student.email }}</td></tr>
+                    <tr><td>Address</td><td>{{ student.addr }}</td></tr>
+
+
+            </table>
+
+        </div>
+    {% endif%}
+
+{% endblock %}

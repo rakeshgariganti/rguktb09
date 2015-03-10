@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content%}
+	<div class="ui ten wide column">
+		<div class="ui large green header">Register</div>
+			<form method="post">		
+				{%csrf_token%}
+				<table class="ui green table">		
+				{{form}}
+				</table>
+				<input type="submit" class="ui centered green button" value="Register" />
+			</form>
+		</div>
+	</div>
+{% endblock %}
