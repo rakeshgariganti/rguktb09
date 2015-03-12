@@ -26,10 +26,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECRET_KEY = '74ry*cn=a60fqn7)=8j=33wk99u3-+x=*a_zbz4!^m%^*a8^p4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -90,14 +90,12 @@ USE_TZ = True
 
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
 )
-
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
